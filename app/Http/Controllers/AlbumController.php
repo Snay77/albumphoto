@@ -13,7 +13,7 @@ class AlbumController extends Controller
     }
 
     function afficheAlbum($id){
-        $Album = Album::findOrFail($id);
+        $album = Album::findOrFail($id);
         return view('album', compact("album",));
     }
 }
