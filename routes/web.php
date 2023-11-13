@@ -19,5 +19,6 @@ Route::get('/', function () {
     return view('accueil');
 });
 
-Route::get('/albums', [AlbumController::class, 'afficheAlbums']);
-Route::get('/album/{id}', [AlbumController::class, 'afficheAlbum']);
+Route::get('/albums', [AlbumController::class, 'afficheAlbums'])->name('albums');
+
+Route::get('/album/{id}', [AlbumController::class, 'afficheAlbum'])->name('album');
