@@ -20,8 +20,8 @@
                 {{-- <a href="{{route("nvphoto")}}">Ajouter une photo</a> seulement si on est sur la page d'un album --}}
             {{-- @endif  --}}
         {{-- @else --}}
-            {{-- <a href="{{route("login")}}">Login</a> --}}
-            {{-- <a href="{{route("register")}}">Register</a> --}}
+            <a href="{{route("login")}}">Login</a>
+            <a href="{{route("register")}}">Register</a>
         {{-- @endauth --}}
     </header>
 
