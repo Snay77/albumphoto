@@ -2,6 +2,9 @@
 
 @section('content')
     
-    <form action="{{route(nvalbum)}}"></form>
+    <form action="{{route(nvalbum)}}" method="POST">
+        @csrf
+        
+    </form>
 
 @endsection
