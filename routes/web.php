@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('accueil');
 });
+
+Route::get('/albums', [AlbumController::class, 'afficheAlbums']);
+Route::get('/albums/{id}', [AlbumController::class, 'afficheAlbum']);
