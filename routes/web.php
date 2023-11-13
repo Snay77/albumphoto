@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/albums', [AlbumController::class, 'afficheAlbums']);
-Route::get('/albums/{id}', [AlbumController::class, 'afficheAlbum']);
+Route::get('/album/{id}', [AlbumController::class, 'afficheAlbum']);
