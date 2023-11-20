@@ -14,7 +14,7 @@ class AlbumsController extends Controller
     public function index()
     {
         $albums = Album::All();
-        return view('albums', compact("albums",));
+        return view('albums.index', compact("albums",));
     }
 
     /**
@@ -22,7 +22,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        return view("albums.create", ["photos" => Photo::all()]);
+        return view("nvAlbum");
     }
 
     /**
@@ -61,25 +61,10 @@ class AlbumsController extends Controller
      */
     public function show(Album $album)
     {
-        return view('album', compact("album",));
+        return view('albums.show', compact("album"));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Album $album)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Album $album)
-    {
-        //
-    }
-
+   
     /**
      * Remove the specified resource from storage.
      */
