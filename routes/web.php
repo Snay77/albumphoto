@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\AlbumsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +20,8 @@ Route::get('/', function () {
     return view('accueil');
 });
 
-Route::get('/albums', [AlbumController::class, 'afficheAlbums'])->name('albums');
+Route::group(["middleware" => "auth"], function() {
+    Route::resource("albums", AlbumsController::class)->only(["create", "store", "destroy"]);
+});
 
-Route::get('/album/{id}', [AlbumController::class, 'afficheAlbum'])->name('album');
+Route::resource("albums", AlbumsController::class)->only(['index', "show"]);
