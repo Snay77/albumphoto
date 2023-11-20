@@ -30,8 +30,31 @@ class AlbumsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "titre" => "required|min:5",
+            "photos" => 'required',
+            "photos.*" => 'required|mimes:jpg,png|max:2048',
+        ]);
+
+        $album = new Album();
+        $album->titre = $request->input("titre");
+        $album->photo = $request->input("photos");
+        $album->save();
+        $album->acteurs()->attach($request->input("albums")); // ça éxécute ce qu'il y a entre les parenthèse
+        return redirect()->route("album",$album->id);
+
+        $image = "https://img.nrj.fr/kVRpY7AYUnngF1TATvbvF8VBa0k=/medias%2F2022%2F01%2F61e002bd4184d_61e002c4260f8.jpeg";
+
+        foreach($request->file('photos') as $file){
+            $f = $file->hashName();         // Je récupère un hash de son nom
+            $file->storeAs("public/upload", $f);   // Je le stocke au bon endroit
+            $p = new Photo();
+            $p->url="/storage/upload/$f";
+            $p->album_id=$album->id;
+        }
+        $p->save();
     }
+
 
     /**
      * Display the specified resource.
