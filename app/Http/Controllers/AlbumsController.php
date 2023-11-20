@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class AlbumsController extends Controller
@@ -21,7 +22,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        //
+        return view("albums.create", ["photos" => Photo::all()]);
     }
 
     /**
@@ -61,6 +62,6 @@ class AlbumsController extends Controller
      */
     public function destroy(Album $album)
     {
-        //
+        // $film->delete();
     }
 }
