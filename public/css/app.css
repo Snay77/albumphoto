@@ -7,6 +7,7 @@ body {
     font-style: normal;
 }
 
+
 /* -- HEADER -- */
 
 header {
@@ -29,12 +30,12 @@ header img {
     font-family: "sovba", sans-serif;
     font-weight: 900;
     font-style: normal;
-    color: white;
+    color: azure;
 }
 
 header a {
     text-decoration: none;
-    color: white;
+    color: azure;
 }
 
 .mod {
@@ -44,6 +45,7 @@ header a {
     font-size: x-large;
     margin: 0em 1em;
 }
+
 
 /* -- ALBUM -- */
 
@@ -65,6 +67,35 @@ header a {
     max-height: 80%;
     padding: 20px;
 }
+
+
+/* -- FOOTER -- */
+
+footer {
+    background-color: black;
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+#logos {
+    display: flex;
+}
+
+#logos a {
+    text-decoration: none;
+    color: azure;
+}
+
+#logos i {
+    margin: 0em 1em;
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+}
+
 
 
 /* font-family: "serenity", sans-serif;
