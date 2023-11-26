@@ -13,6 +13,7 @@ header {
     background-color: black;
     display: flex;
     justify-content: space-between;
+    padding: 0.75em 5em;
 }
 
 header div {
@@ -29,6 +30,11 @@ header img {
     font-weight: 900;
     font-style: normal;
     color: white;
+}
+
+header a {
+    text-decoration: none;
+    
 }
 
 /* -- ALBUM -- */
