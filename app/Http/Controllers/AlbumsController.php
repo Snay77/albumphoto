@@ -23,7 +23,7 @@ class AlbumsController extends Controller
      */
     public function create()
     {
-        return view("nvAlbum");
+        return view("albums.create");
     }
 
     /**
