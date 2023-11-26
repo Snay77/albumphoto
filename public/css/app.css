@@ -37,6 +37,14 @@ header a {
     color: white;
 }
 
+.mod {
+    font-family: "serenity", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: x-large;
+    margin: 0em 1em;
+}
+
 /* -- ALBUM -- */
 
 #imgzoom{
