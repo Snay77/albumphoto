@@ -2,7 +2,7 @@
 
 body {
     margin: 0 auto;
-    font-family: "serenity", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 300;
     font-style: normal;
 }
@@ -39,11 +39,61 @@ header a {
 }
 
 .mod {
-    font-family: "serenity", sans-serif;
-    font-weight: 700;
+    font-family: "Montserat", sans-serif;
+    font-weight: 500;
     font-style: normal;
     font-size: x-large;
     margin: 0em 1em;
+}
+
+
+/* -- ACCUEIL -- */
+
+#bandeau1 {
+    background-color: black;
+    display: flex;
+    color: azure;
+    justify-content: space-between;
+    padding-left: 7em;
+}
+
+#bandeau1 h1 {
+    font-size: 4em;
+}
+
+#bandeau1 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#bandeau1 button {
+    border: none;
+    border-radius: 30px;
+    padding: 1em 2em;
+    background-color: mediumpurple;
+    font-size: 1.2em;
+}
+
+#bandeau1 button:hover, #bandeau1 button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em mediumpurple;
+  transform: translateY(-0.25em);
+}
+
+#bandeau2 {
+    padding: 3em 0em;
+    font-size: 4em;
+    text-align: center;
+}
+
+#bandeau3 {
+    background-color: mediumpurple;
+    text-align: center;
+}
+
+#selection {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 
@@ -95,21 +145,3 @@ footer {
     font-size: 1.75em;
     margin-bottom: 0.5em;
 }
-
-
-
-/* font-family: "serenity", sans-serif;
-font-weight: 300;
-font-style: normal;
-
-font-family: "serenity", sans-serif;
-font-weight: 700;
-font-style: normal;
-
-font-family: "serenity", sans-serif;
-font-weight: 900;
-font-style: normal;
-
-font-family: "sovba", sans-serif;
-font-weight: 900;
-font-style: normal; */
