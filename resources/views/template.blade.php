@@ -26,7 +26,7 @@
 
         <div>
             <img src="{{asset('img/logo.png')}}" alt="Logo ToutouPics">
-            <h1 class="logo">ToutouPics</h1>
+            <a href="{{route("accueil")}}"><h1 class="logo">ToutouPics</h1></a>
         </div>
 
         <div>
