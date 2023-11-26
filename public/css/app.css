@@ -1,7 +1,37 @@
-/* -- HEADER -- */
-header img {
-    max-width: 75px;
+/* -- TOUT -- */
+
+body {
+    margin: 0 auto;
+    font-family: "serenity", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
+
+/* -- HEADER -- */
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    max-width: 7em;
+}
+
+.logo {
+    font-family: "sovba", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+}
+
+/* -- ALBUM -- */
 
 #imgzoom{
     display: none;
@@ -21,3 +51,20 @@ header img {
     max-height: 80%;
     padding: 20px;
 }
+
+
+/* font-family: "serenity", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+font-family: "serenity", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+font-family: "serenity", sans-serif;
+font-weight: 900;
+font-style: normal;
+
+font-family: "sovba", sans-serif;
+font-weight: 900;
+font-style: normal; */
