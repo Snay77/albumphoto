@@ -3,7 +3,7 @@
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\AlbumsController;
 use Illuminate\Support\Facades\Route;
-
+use Whoops\Run;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +23,5 @@ Route::group(["middleware" => "auth"], function() {
 });
 
 Route::resource("albums", AlbumsController::class)->only(['index', "show"]);
+
+// Route::get('');

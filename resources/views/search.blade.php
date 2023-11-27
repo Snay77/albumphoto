@@ -1,8 +1,7 @@
 @extends('template')
 
 @section('content')
-    <h1>Les photos de {{$album -> titre}} :</h1>
-    <i>Créée par ... le ...</i>
+    <h1>Recherche sur ...</h1>
 
     {{-- <form action="{{route('')}}" method="GET">
         <input type="text" name="titre" placeholder="Titre">
@@ -10,6 +9,6 @@
         <button type="submit">Filtrer</button>
     </form> --}}
 
-@include("_photos", ["photos" => $album->photos])
+@include("_photos", ["photos" => $photos])
 
 @endsection

@@ -39,12 +39,9 @@ class AlbumsController extends Controller
 
         $album = new Album();
         $album->titre = $request->input("titre");
-        $album->photo = $request->input("photos");
         $album->creation = date('Y-m-d');
         $album->user_id = Auth::id();
         $album->save();
-        $album->acteurs()->attach($request->input("albums")); // ça éxécute ce qu'il y a entre les parenthèse
-        return redirect()->route("album",$album->id);
 
         foreach($request->file('photos') as $file){
             $f = $file->hashName();         // Je récupère un hash de son nom
@@ -52,8 +49,9 @@ class AlbumsController extends Controller
             $p = new Photo();
             $p->url="/storage/upload/$f";
             $p->album_id=$album->id;
+            $p->save();
         }
-        $p->save();
+        return redirect("/");
     }
 
 
@@ -71,6 +69,24 @@ class AlbumsController extends Controller
      */
     public function destroy(Album $album)
     {
-        // $film->delete();
+        // $photo->delete();
+    }
+
+    public function filter(Request $request){
+        $query = Photo::query();
+
+        if($request->has('titre')){ //filtre par titre
+            $query->where('titre', 'like', '%'.$request->input('titre').'%');
+        }
+
+        // if($request->has('tag')){
+        //     $query->whereHas('tags', function ($q) use ($request){
+        //         $q->where('nom',$request->input('tag'));
+        //     });
+        // }
+
+        $photos = $query->get();
+
+        return view('show.search', compact('photos'));
     }
 }
