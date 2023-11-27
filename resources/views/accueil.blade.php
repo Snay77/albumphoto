@@ -8,7 +8,7 @@
 
     <section id="bandeau1">
         <div>
-            <h1>Des albums photos pour les plus beaux <br/> toutous !</h1>
+            <h1>Des albums photos pour les plus beaux toutous !</h1>
             <button onclick="window.location.href = '{{route('albums.index')}}';">Voir tous les albums</button>
         </div>
         <img src="{{asset('img/accueil.jpg')}}" alt="dogo">
@@ -24,16 +24,19 @@
             <div class="select1 select">
                 <img src="https://i.pinimg.com/564x/19/83/15/198315568576025267103532034eebed.jpg" alt="Image1">
                 <a href="#"><h3>Le titre de l'album</h3></a>
+                <p>Créée le : </p>
             </div>
 
             <div class="select2 select">
                 <img src="https://i.pinimg.com/564x/5e/c2/8f/5ec28fcf22c7f1142b0b6d723f2da610.jpg" alt="Image1">
                 <a href="#"><h3>Le titre de l'album</h3></a>
+                <p>Créée le : </p>
             </div>
 
             <div class="select3 select">
                 <img src="https://i.pinimg.com/564x/f0/b5/d0/f0b5d07db8608c0fae8fa149b5c323db.jpg" alt="Image1">
                 <a href="#"><h3>Le titre de l'album</h3></a>
+                <p>Créée le : </p>
             </div>
         </div>
         
