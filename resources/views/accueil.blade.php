@@ -19,7 +19,7 @@
     </section>
 
     <section id="bandeau3">
-        <h2>La séléction du mois</h2>
+        <h2>Découvrez des albums</h2>
         <div id="selection">
 
             @foreach ($albums as $a)

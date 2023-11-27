@@ -5,6 +5,7 @@ body {
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
     font-style: normal;
+    min-height: 100%;
 }
 
 
@@ -116,6 +117,13 @@ header a {
 }
 
 
+/* -- LOGIN -- */
+
+.log {
+    background: linear-gradient(0deg, rgba(178,127,212,1) 0%, rgba(35,181,165,1) 100%);
+}
+
+
 /* -- ALBUM -- */
 
 #imgzoom{
@@ -148,6 +156,9 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 #logos {
