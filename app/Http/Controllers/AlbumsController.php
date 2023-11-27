@@ -69,7 +69,7 @@ class AlbumsController extends Controller
      */
     public function destroy(Album $album)
     {
-        // $film->delete();
+        // $photo->delete();
     }
 
     public function filter(Request $request){
@@ -79,14 +79,14 @@ class AlbumsController extends Controller
             $query->where('titre', 'like', '%'.$request->input('titre').'%');
         }
 
-        if($request->has('tag')){
-            $query->whereHas('tags', function ($q) use ($request){
-                $q->where('nom',$request->input('tag'));
-            });
-        }
+        // if($request->has('tag')){
+        //     $query->whereHas('tags', function ($q) use ($request){
+        //         $q->where('nom',$request->input('tag'));
+        //     });
+        // }
 
         $photos = $query->get();
 
-        return view('show.albums', compact('photos'));
+        return view('show.search', compact('photos'));
     }
 }
