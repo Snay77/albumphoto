@@ -120,7 +120,76 @@ header a {
 /* -- LOGIN -- */
 
 .log {
-    background: linear-gradient(0deg, rgba(178,127,212,1) 0%, rgba(35,181,165,1) 100%);
+    box-sizing: border-box;
+    background-color: rgba(240, 255, 255, 0.5);
+    margin: 2% auto;
+    height: auto;
+    width: 25em;
+    border-radius: 15px;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 0.20em 2em 2em 2em; /* haut; droite; bas; gauche */
+}
+
+.log h3 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.35em;
+    text-align: center;
+}
+
+.log p {
+    font-size: 1.35em;
+    text-align: center;
+}
+
+.log form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/*À modifier*/
+.input-item {
+    background: azure;
+    color: #333;
+    padding: 14.5px 0px 15px 9px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#eye {
+    background: #fff;
+    color: #333;
+    margin: 5.9px 0 0 0;
+    margin-left: -20px;
+    padding: 15px 9px 19px 0px;
+    border-radius: 0px 5px 5px 0px;
+    float: right;
+    position: relative;
+    right: 1%;
+    top: -.2%;
+    z-index: 5;
+    cursor: pointer;
+}
+
+input[class="form-input"]{
+    width: 17em;
+    height: 2em;
+    margin-top: 0.75em;
+    padding: 0.95em;
+    font-size: 16px;
+    color: #5E6472;
+    outline: none;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+}
+
+input[id="txt-input"] {width: 17em;}
+
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
 }
 
 
