@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>Les photos de {{$album -> titre}} :</h1>
+    <i>Créée par ... le ...</i>
 
     @forelse ($album->photos as $p)
         <img src="{{$p -> url}}" alt="l'image" id="imgorigine">
