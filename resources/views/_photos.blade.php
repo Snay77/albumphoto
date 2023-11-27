@@ -1,3 +1,4 @@
+<i>Créé par ... le {{$album -> creation}}</i>
 @forelse ($photos as $p)
 <img src="{{$p -> url}}" alt="l'image" id="imgorigine">
 <div id="imgzoom">

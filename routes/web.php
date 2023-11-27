@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\AlbumsController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Whoops\Run;
 |
 */
 
-Route::get('/', function () { return view('accueil'); })->name(('accueil'));
+Route::get('/', [AccueilController::class, 'afficherRand'])->name(('accueil'));
 
 Route::group(["middleware" => "auth"], function() {
     Route::resource("albums", AlbumsController::class)->only(["create", "store", "destroy"]);
