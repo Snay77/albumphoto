@@ -73,4 +73,22 @@ class AlbumsController extends Controller
     {
         // $film->delete();
     }
+
+    public function filter(Request $request){
+        $query = Photo::query();
+
+        if($request->has('titre')){ //filtre par titre
+            $query->where('titre', 'like', '%'.$request->input('titre').'%');
+        }
+
+        if($request->has('tag')){
+            $query->whereHas('tags', function ($q) use ($request){
+                $q->where('nom',$request->input('tag'));
+            });
+        }
+
+        $photos = $query->get();
+
+        return view('show.albums', compact('photos'));
+    }
 }
