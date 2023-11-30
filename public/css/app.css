@@ -149,47 +149,56 @@ header a {
     margin: 0 auto;
 }
 
-/*À modifier*/
-.input-item {
-    background: azure;
-    color: #333;
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
-}
-
-#eye {
-    background: #fff;
-    color: #333;
-    margin: 5.9px 0 0 0;
-    margin-left: -20px;
-    padding: 15px 9px 19px 0px;
-    border-radius: 0px 5px 5px 0px;
-    float: right;
+.inp {
     position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-    cursor: pointer;
 }
 
-input[class="form-input"]{
+.form-input {
+    margin: 0.75em 1em 0 1em;
+    padding: 0.95em;
+    padding-left: 2.5em;
     width: 17em;
     height: 2em;
-    margin-top: 0.75em;
-    padding: 0.95em;
-    font-size: 16px;
     color: #5E6472;
     outline: none;
     border: none;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 15px;
     transition: 0.2s linear;
 }
 
-input[id="txt-input"] {width: 17em;}
+.input-item {
+    color: #333;
+    position: absolute;
+    top: 45%;
+    left: 1.5em;
+}
+
+#eye {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    right: 1.5em;
+}
 
 input:focus {
-    transform: translateX(-2px);
-    border-radius: 5px;
+    transform: translateX(-0.2em);
+}
+
+.bas {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.log-in {
+    margin-top: 0.75em;
+    color: #252537;
+    background-color: azure;
+    height: 2.5em;
+    width: 8.5em;
+    border: none;
+    border-radius: 15px;
 }
 
 
