@@ -30,7 +30,7 @@
       <span class="input-item">
         <i class='bx bxs-key' ></i>
       </span>
-      <input type="password" class="form-input" name="password" required placeholder="Mot de passe"/>
+      <input type="password" class="form-input" id="pwd" name="password" required placeholder="Mot de passe"/>
       <span>
         <i class='bx bx-low-vision' aria-hidden="true"  type="button" id="eye"></i>
       </span><br/>
