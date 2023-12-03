@@ -22,13 +22,13 @@
         <h2>Découvrez des albums</h2>
         <div id="selection">
 
-            @foreach ($albums as $a)
+            @for($i = 0; $i < count($albums); $i++)
                 <div class="select">
-                    <img src="{{$a->photos->url}}" alt="Image">
-                    <a href="{{route("albums.show", $a -> id)}}"><h3>{{$a->titre}}</h3></a>
-                    <p>Créé le : {{$a->creation}}</p>
+                    <img src="{{$photos[$i]->url}}" alt="Image">
+                    <a href="{{route("albums.show", $albums[$i] -> id)}}"><h3>{{$albums[$i]->titre}}</h3></a>
+                    <p>Créé le : {{$albums[$i]->creation}}</p>
                 </div>
-            @endforeach
+            @endfor
         
     </section>
 

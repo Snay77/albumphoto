@@ -14,8 +14,13 @@
         @csrf
         <label for="titre">Titre de l'album :</label>
         <input type="text" name="titre" id="titre">
-        <label for="photo">Séléctionnez des photos</label>
-        <input type="file" name="photos[]" multiple id="photo">
+        <div>
+            <input type="text" name="titrephoto[]" placeholder="Titre de le photo...">
+            <label for="photo">Séléctionne une photo</label>
+            <input type="file" name="photos[]" multiple id="photo">
+            <input type="text" name="tag[]" placeholder="Tag de la photo...">
+            <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
+        </div>
         <input type="submit"><br/>
     </form>
 

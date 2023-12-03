@@ -10,6 +10,10 @@ class AccueilController extends Controller
 {
     function afficherRand () {
         $albums = Album::inRandomOrder()->take(3)->get();
-        return view('accueil', ['albums' => $albums, 'photos' => $albums->photos]);
+        $photos = [];
+        foreach ($albums as $album) {
+            $photos[] = Photo::whereRaw('LOWER(album_id) = ?', $album->id)->first();
+        }
+        return view('accueil', ['albums' => $albums, 'photos' => $photos]);
     }
 }

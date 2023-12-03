@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\Photo;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,9 +33,12 @@ class AlbumsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "titre" => "required|min:5",
-            "photos" => 'required',
+            "titre" => "required",
+            "titrephoto.*" => "required",
+            // "photos" => 'required',
             "photos.*" => 'required|mimes:jpg,png|max:2048',
+            "tag.*" => "required",
+            "note.*" => "required|max:5",
         ]);
 
         $album = new Album();
@@ -43,13 +47,31 @@ class AlbumsController extends Controller
         $album->user_id = Auth::id();
         $album->save();
 
-        foreach($request->file('photos') as $file){
-            $f = $file->hashName();         // Je récupère un hash de son nom
-            $file->storeAs("public/upload", $f);   // Je le stocke au bon endroit
+
+        for ($i = 0; $i < count($request->input("titrephoto")); $i++) {
+            if ($request->file('photos')[$i]->isValid()) {
+                $f = $request->file("photos")[$i]->hashName();         // Je récupère un hash de son nom
+                $request->file("photos")[$i]->storeAs("public/upload", $f);   // Je le stocke au bon endroit
+            }
             $p = new Photo();
-            $p->url="/storage/upload/$f";
-            $p->album_id=$album->id;
+            $p->titre = $request->input("titrephoto")[$i];
+            $p->note = $request->input('note')[$i];
+            $p->url = "/storage/upload/$f";
+            $p->album_id = $album->id;
             $p->save();
+
+
+            $select = Tag::whereRaw('LOWER(nom) = ?', strtolower($request->input('tag')[$i]))->first();
+            if ($select) {
+                $p->tags()->attach($select->id);
+            } else {
+                $tag = new Tag();
+                $tag->nom = $request->input('tag')[$i];
+                $tag->save();
+                $p->tags()->attach($tag->id);
+            }
+            $t = new Tag();
+            $t->nom = $request->file('tag');
         }
         return redirect("/");
     }
@@ -63,7 +85,7 @@ class AlbumsController extends Controller
         return view('albums.show', compact("album"));
     }
 
-   
+
     /**
      * Remove the specified resource from storage.
      */
@@ -72,21 +94,40 @@ class AlbumsController extends Controller
         // $photo->delete();
     }
 
-    public function filter(Request $request){
+    public function filteralbum(Request $request)
+    {
+        $sortBy = $request->input('sort_by'); // Récupération du critère de tri depuis le formulaire
+
+        // Par défaut, tri par date de création si aucun critère spécifié
+        $sortBy = $sortBy ?? 'created_at';
+
+        // Récupération des albums triés en fonction du critère
+        $albums = Album::orderBy($sortBy)->get();
+
+        return view('albums.index', compact('albums'));
+    }
+
+
+    public function filterphoto(Request $request)
+    {
+        //je récup les paramètre de la recherche
+        $tag = $request->input('tag');
+        $titre = $request->input('titre');
+
         $query = Photo::query();
 
-        if($request->has('titre')){ //filtre par titre
-            $query->where('titre', 'like', '%'.$request->input('titre').'%');
+        if ($tag) {
+            $query->whereHas('tag', function ($query) use ($tag) {
+                $query->where('nom', $tag);
+            });
         }
 
-        // if($request->has('tag')){
-        //     $query->whereHas('tags', function ($q) use ($request){
-        //         $q->where('nom',$request->input('tag'));
-        //     });
-        // }
+        if ($titre) {
+            $query->where('titre', 'LIKE', "%$titre%");
+        }
 
-        $photos = $query->get();
+        $photofiltre = $query->get();
 
-        return view('show.search', compact('photos'));
+        return view('albums.show', compact('photofiltre'));
     }
 }
