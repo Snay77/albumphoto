@@ -15,7 +15,7 @@
         <label for="titre">Titre de l'album :</label>
         <input type="text" name="titre" id="titre">
         <div>
-            <input type="text" name="titrephoto[]" placeholder="Titre de le photo...">
+            <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
             <label for="photo">Séléctionne une photo</label>
             <input type="file" name="photos[]" multiple id="photo">
             <input type="text" name="tag[]" placeholder="Tag de la photo...">

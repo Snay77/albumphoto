@@ -1,6 +1,34 @@
 @extends('template')
 
 @section('content')
+
+    {{-- Fonction pour ajouter une photo --}}
+    <button id="ajph">Ajouter une photo</button>
+
+    <div id="form">
+        <div id="int">
+
+        </div>
+        <form action="" method="post">
+            @csrf
+            <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
+            <input type="file" name="photos[]" multiple id="photo">
+            <input type="text" name="tag[]" placeholder="Tag de la photo">
+            <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
+            <input type="submit">
+        </form>
+        <button id="close">Fermer</button>
+    </div>
+
+    <script>
+        let ajph = document.getElementById("ajph");
+        let close = document.getElementById("close");
+        let form = document.getElementById("form");
+        ajph.addEventListener("click", e => form.style.display="block");
+        close.addEventListener("click", e => form.style.display="none");
+
+    </script>
+
     <h1>Les photos de {{$album -> titre}} :</h1>
 
     <form action="{{ route('filter.photos') }}" method="GET">

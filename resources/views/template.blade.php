@@ -57,7 +57,7 @@
             <a href="www.linkedin.com/in/lou-anne-biet-3a292622a"><i class='bx bxl-linkedin'></i></a>
         </div>
 
-        Site créée par Ethan Barlet et Lou-Anne Biet MMI
+        Site créé par Ethan Barlet et Lou-Anne Biet MMI
     </footer>
 </body>
 </html>
