@@ -27,3 +27,6 @@ Route::resource("albums", AlbumsController::class)->only(['index', "show"]);
 Route::get('/albums/index', [AlbumsController::class, 'filteralbum'])->name('filter.albums');
 
 Route::get('/albums/show', [AlbumsController::class, 'filterphoto'])->name('filter.photos');
+
+Route::get('/albums/show', [AlbumsController::class, 'ajoutPhoto'])->name('ajoutPhoto');
+Route::post('/albums/show', [AlbumsController::class, 'enregistrePhoto'])->name('ajoutPhoto');

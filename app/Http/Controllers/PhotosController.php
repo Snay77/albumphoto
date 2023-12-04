@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PhotosController extends Controller
@@ -28,7 +29,41 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            "titrephoto.*" => "required",
+            "photos.*" => 'required|mimes:jpg,png|max:2048',
+            "tag.*" => "required",
+            "note.*" => "required|max:5"
+        ]);
+
+        for ($i = 0; $i < count($request->input("titrephoto")); $i++) {
+            if ($request->file('photos')[$i]->isValid()) {
+                $f = $request->file("photos")[$i]->hashName();
+                $request->file("photos")[$i]->storeAs("public/upload", $f);
+            }
+            $p = new Photo();
+            $p->titre = $request->input("titrephoto")[$i];
+            $p->note = $request->input('note')[$i];
+            $p->url = "/storage/upload/$f";
+            $p->album_id = $album->id;
+            $p->save();
+
+
+            $select = Tag::whereRaw('LOWER(nom) = ?', strtolower($request->input('tag')[$i]))->first();
+            if ($select) {
+                $p->tags()->attach($select->id);
+            } else {
+                $tag = new Tag();
+                $tag->nom = $request->input('tag')[$i];
+                $tag->save();
+                $p->tags()->attach($tag->id);
+            }
+            $t = new Tag();
+            $t->nom = $request->file('tag');
+        }
+        return redirect("/");
+        
+    
     }
 
     /**
