@@ -7,17 +7,16 @@
 
     <div id="form">
         <div id="int">
-
+            <form action="" method="post">
+                @csrf
+                <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
+                <input type="file" name="photos[]" multiple id="photo">
+                <input type="text" name="tag[]" placeholder="Tag de la photo">
+                <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
+                <input type="submit">
+            </form>
+            <button id="close">Fermer</button>
         </div>
-        <form action="" method="post">
-            @csrf
-            <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
-            <input type="file" name="photos[]" multiple id="photo">
-            <input type="text" name="tag[]" placeholder="Tag de la photo">
-            <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
-            <input type="submit">
-        </form>
-        <button id="close">Fermer</button>
     </div>
 
     <script>
