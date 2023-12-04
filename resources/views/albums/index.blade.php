@@ -5,7 +5,7 @@
 <form action="{{ route('filter.albums') }}" method="GET">
     <select name="sort_by">
         <option value="created_at">Date de création</option>
-        <option value="title">Titre</option>
+        <option value="titre">Titre</option>
     </select>
     <button type="submit">Trier</button>
 </form>

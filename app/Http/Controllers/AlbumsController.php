@@ -108,12 +108,12 @@ class AlbumsController extends Controller
     }
 
 
-    public function filterphoto(Request $request)
+    public function filterphoto(Request $request, $id)
     {
         //je récup les paramètre de la recherche
         $tag = $request->input('tag');
         $titre = $request->input('titre');
-
+        $album = Album::findOrFail($id);
         $query = Photo::query();
 
         if ($tag) {
@@ -128,6 +128,6 @@ class AlbumsController extends Controller
 
         $photofiltre = $query->get();
 
-        return view('albums.show', compact('photofiltre'));
+        return view('albums.show', compact('photofiltre', 'album'));
     }
 }
