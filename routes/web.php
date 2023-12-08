@@ -17,16 +17,14 @@ use Whoops\Run;
 */
 
 Route::get('/', [AccueilController::class, 'afficherRand'])->name(('accueil'));
+Route::get('/albums/index', [AlbumsController::class, 'filteralbum'])->name('filter.albums');
+
+Route::get('/albums/filter/{id}', [AlbumsController::class, 'filterphoto'])->name('filter.photos');
+
+
 
 Route::group(["middleware" => "auth"], function() {
     Route::resource("albums", AlbumsController::class)->only(["create", "store", "destroy"]);
 });
 
 Route::resource("albums", AlbumsController::class)->only(['index', "show"]);
-
-Route::get('/albums/index', [AlbumsController::class, 'filteralbum'])->name('filter.albums');
-
-Route::get('/albums/show', [AlbumsController::class, 'filterphoto'])->name('filter.photos');
-
-Route::get('/albums/show', [AlbumsController::class, 'ajoutPhoto'])->name('ajoutPhoto');
-Route::post('/albums/show', [AlbumsController::class, 'enregistrePhoto'])->name('ajoutPhoto');

@@ -1,0 +1,255 @@
+/* -- TOUT -- */
+
+body {
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    min-height: 100%;
+}
+
+
+/* -- HEADER -- */
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75em 5em;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    max-width: 7em;
+}
+
+.logo {
+    font-family: "sovba", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: azure;
+}
+
+header a {
+    text-decoration: none;
+    color: azure;
+}
+
+.mod {
+    font-family: "Montserat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: x-large;
+    margin: 0em 1em;
+}
+
+
+/* -- ACCUEIL -- */
+
+#bandeau1 {
+    background-color: black;
+    display: flex;
+    color: azure;
+    justify-content: space-between;
+    padding-left: 7em;
+}
+
+#bandeau1 h1 {
+    font-size: 4em;
+}
+
+#bandeau1 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#bandeau1 button {
+    border: none;
+    border-radius: 30px;
+    padding: 1em 2em;
+    background-color: mediumpurple;
+    font-size: 1.2em;
+    max-width: 30%;
+    margin: auto;
+}
+
+#bandeau1 button:hover, #bandeau1 button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em mediumpurple;
+  transform: translateY(-0.25em);
+}
+
+#bandeau2 {
+    padding: 3em 0em;
+    font-size: 4em;
+    text-align: center;
+}
+
+#bandeau3 {
+    background-color: mediumpurple;
+    text-align: center;
+    padding: 1em 1.5em;
+}
+
+#bandeau3 h2 {
+    font-family: "Montserat", sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+}
+
+#selection {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 0em;
+}
+
+.select img {
+    max-height: 25em;
+}
+
+.select a {
+    text-decoration: none;
+    color: azu;
+}
+
+
+/* -- LOGIN -- */
+
+.log {
+    box-sizing: border-box;
+    background-color: rgba(240, 255, 255, 0.5);
+    margin: 2% auto;
+    height: auto;
+    width: 25em;
+    border-radius: 15px;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 0.20em 2em 2em 2em; /* haut; droite; bas; gauche */
+}
+
+.log h3 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.35em;
+    text-align: center;
+}
+
+.log p {
+    font-size: 1.35em;
+    text-align: center;
+}
+
+.log form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.inp {
+    position: relative;
+}
+
+.form-input {
+    margin: 0.75em 1em 0 1em;
+    padding: 0.95em;
+    padding-left: 2.5em;
+    width: 17em;
+    height: 2em;
+    color: #5E6472;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    transition: 0.2s linear;
+}
+
+.input-item {
+    color: #333;
+    position: absolute;
+    top: 45%;
+    left: 1.5em;
+}
+
+#eye {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    right: 1.5em;
+}
+
+input:focus {
+    transform: translateX(-0.2em);
+}
+
+.bas {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.log-in {
+    margin-top: 0.75em;
+    color: #252537;
+    background-color: azure;
+    height: 2.5em;
+    width: 8.5em;
+    border: none;
+    border-radius: 15px;
+}
+
+
+/* -- ALBUM -- */
+
+#imgzoom{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+}
+
+#imgzoom img{
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+    padding: 20px;
+}
+
+
+/* -- FOOTER -- */
+
+footer {
+    background-color: black;
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#logos {
+    display: flex;
+}
+
+#logos a {
+    text-decoration: none;
+    color: azure;
+}
+
+#logos i {
+    margin: 0em 1em;
+    font-size: 1.75em;
+    margin-bottom: 0.5em;
+}

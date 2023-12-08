@@ -108,26 +108,26 @@ class AlbumsController extends Controller
     }
 
 
-    public function filterphoto(Request $request)
+    public function filterphoto(Request $request, $id)
     {
         //je récup les paramètre de la recherche
         $tag = $request->input('tag');
         $titre = $request->input('titre');
-
+        $album = Album::findOrFail($id);
         $query = Photo::query();
 
         if ($tag) {
-            $query->whereHas('tag', function ($query) use ($tag) {
+            $query->whereHas('tags', function ($query) use ($tag) {
                 $query->where('nom', $tag);
-            });
+            })->where("album_id",$id);
         }
 
         if ($titre) {
-            $query->where('titre', 'LIKE', "%$titre%");
+            $query->where('titre', 'LIKE', "%$titre%")->where("album_id",$id);
         }
 
         $photofiltre = $query->get();
 
-        return view('albums.show', compact('photofiltre'));
+        return view('albums.show', compact('photofiltre', 'album'));
     }
 }

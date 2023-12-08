@@ -31,8 +31,9 @@
     </script>
 
     <h1>Les photos de {{$album -> titre}} :</h1>
+    <i>Créé par ... le {{$album -> creation}}</i>
 
-    <form action="{{ route('filter.photos') }}" method="GET">
+    <form action="/albums/filter/{{$album->id}}" method="GET">
         <div>
             <label for="tag">Tag:</label>
             <input type="text" id="tag" name="tag" placeholder="Tag ...">
@@ -46,6 +47,6 @@
         </div>
     </form>
 
-@include("_photos", ["photos" => $album->photos])
+@include("_photos", ["photos" => isset($photofiltre) ? $photofiltre : $album->photos])
 
 @endsection
