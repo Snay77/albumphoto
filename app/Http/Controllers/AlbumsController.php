@@ -117,13 +117,13 @@ class AlbumsController extends Controller
         $query = Photo::query();
 
         if ($tag) {
-            $query->whereHas('tag', function ($query) use ($tag) {
+            $query->whereHas('tags', function ($query) use ($tag) {
                 $query->where('nom', $tag);
-            });
+            })->where("album_id",$id);
         }
 
         if ($titre) {
-            $query->where('titre', 'LIKE', "%$titre%");
+            $query->where('titre', 'LIKE', "%$titre%")->where("album_id",$id);
         }
 
         $photofiltre = $query->get();
