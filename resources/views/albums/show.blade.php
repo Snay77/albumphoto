@@ -13,6 +13,7 @@
                     <input type="file" name="photos[]" multiple id="photo">
                     <input type="text" name="tag[]" placeholder="Tag de la photo">
                     <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
+                    <input type="hidden" name="idAlbum" value="{{$album->id}}">
                     <input type="submit">
                 </form>
                 <button id="close">Fermer</button>

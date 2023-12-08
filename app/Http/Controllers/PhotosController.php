@@ -45,7 +45,7 @@ class PhotosController extends Controller
             $p->titre = $request->input("titrephoto")[$i];
             $p->note = $request->input('note')[$i];
             $p->url = "/storage/upload/$f";
-            $p->album_id = $album->id;
+            $p->album_id = $request->input("idAlbum");
             $p->save();
 
 
@@ -62,8 +62,6 @@ class PhotosController extends Controller
             $t->nom = $request->file('tag');
         }
         return redirect("/");
-        
-    
     }
 
     /**
