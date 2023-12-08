@@ -6,8 +6,9 @@
     <title>AlbumPhoto</title>
     <link rel="icon" href="{{asset('img/logo.png')}}">
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="https://use.typekit.net/ktf0wmd.css">
-    <link rel="stylesheet" href="https://use.typekit.net/ktf0wmd.css">
+    {{-- <link rel="stylesheet" href="https://use.typekit.net/ktf0wmd.css"> --}}
+    {{-- <link rel="stylesheet" href="https://use.typekit.net/ktf0wmd.css"> --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>

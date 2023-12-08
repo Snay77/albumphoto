@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>Les photos de {{$album -> titre}} :</h1>
+    <i>Créé par ... le {{$album -> creation}}</i>
 
     <form action="/albums/filter/{{$album->id}}" method="GET">
         <div>
