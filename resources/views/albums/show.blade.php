@@ -7,7 +7,7 @@
         <button id="ajph">Ajouter une photo</button>
         <div id="form">
             <div id="int">
-                <form action="" method="post">
+                <form action="{{route("ajoutPhoto")}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
                     <input type="file" name="photos[]" multiple id="photo">
@@ -49,4 +49,14 @@
 
 @include("_photos", ["photos" => isset($photofiltre) ? $photofiltre : $album->photos])
 
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @endsection

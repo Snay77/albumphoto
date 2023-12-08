@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\AlbumsController;
+use App\Http\Controllers\PhotosController;
 use Illuminate\Support\Facades\Route;
 use Whoops\Run;
 
@@ -29,5 +30,7 @@ Route::group(["middleware" => "auth"], function() {
 
 Route::resource("albums", AlbumsController::class)->only(['index', "show"]);
 
-Route::get('/albums/show', [AlbumsController::class, 'ajoutPhoto'])->name('ajoutPhoto');
-Route::post('/albums/show', [AlbumsController::class, 'enregistrePhoto'])->name('ajoutPhoto');
+Route::get('/albums/show', [PhotosController::class, 'store'])->name('ajoutPhoto');
+Route::post('/albums/show', [PhotosController::class, 'store'])->name('ajoutPhoto');
+
+Route::resource("/photo", PhotosController::class, ['names'=>["store"=>"ajoutPhoto", "destroy"=>"delPhoto"]])->only(['store', 'destroy']);
