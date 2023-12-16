@@ -1,5 +1,7 @@
 import './bootstrap';
 
+// Agrandir l'image
+
     const imgorigine = document.querySelectorAll('#imgorigine');
     const imgzoom = document.getElementById('imgzoom');
     const imgzoomsrc = document.getElementById('imgzoomsrc');
@@ -22,3 +24,7 @@ import './bootstrap';
             imgzoom.style.display = 'none'
         })
     }
+
+// Rajouter des lignes de photo lors de l'ajout de l'album
+
+    const ajouterphoto = document.querySelector(".ajouter-photo")
