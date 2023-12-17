@@ -61,7 +61,7 @@ class PhotosController extends Controller
             $t = new Tag();
             $t->nom = $request->file('tag');
         }
-        return redirect("/");
+        return redirect("albums/" . $request->input("idAlbum"));
     }
 
     /**
