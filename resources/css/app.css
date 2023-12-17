@@ -292,6 +292,45 @@ input:focus {
     text-align: center;
 }
 
+#ajph {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: mediumpurple;
+    color: white;
+    cursor: pointer;
+}
+
+.filtrage {
+    background-color: mediumpurple;
+    max-width: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.filtrage button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    cursor: pointer;
+}
+
+.filtrage div {
+    margin-bottom: 1rem;
+}
+
+.filtrage input {
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 0.25rem;
+}
+
 
 /* -- UN ALBUM SUPPRESSION PHOTO -- */
 

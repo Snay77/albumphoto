@@ -49,18 +49,16 @@
     </script>
 
     {{-- Filtrer les photos par rapport au tag ou au titre --}}
-    <form action="/albums/filter/{{$album->id}}" method="GET" class="decale">
+    <form action="/albums/filter/{{$album->id}}" method="GET" class="decale filtrage">
         <div>
-            <label for="tag">Tag:</label>
-            <input type="text" id="tag" name="tag" placeholder="Tag ...">
+            <label for="tag">Tag :</label>
+            <input type="text" id="tag" name="tag" placeholder="Tag de la photo">
         </div>
         <div>
-            <label for="titre">Titre:</label>
-            <input type="text" id="titre" name="titre" placeholder="Titre de la photo ...">
+            <label for="titre">Titre :</label>
+            <input type="text" id="titre" name="titre" placeholder="Titre de la photo">
         </div>
-        <div>
-            <button type="submit">Filtrer</button>
-        </div>
+        <button type="submit">Filtrer</button>
     </form>
 
     @include("_photos", ["photos" => isset($photofiltre) ? $photofiltre : $album->photos])
