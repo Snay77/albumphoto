@@ -1,11 +1,22 @@
-<div id="phoAlb">
-
-
+<div id="phoAlb" class="container">
     @forelse ($photos as $p)
-    <div id="phoAlb">
+    <div>
         <div class="img">
             <img src="{{$p -> url}}" alt="l_image" id="imgorigine">
-            <i class='bx bxs-x-circle'></i>
+            <p class="titPho">{{$p->titre}}</p>
+            <p>{{$p->note}}/5</p>
+
+            @auth
+                @if (Auth::user()->id == $album->user_id)
+                    <form action="{{route('delPhoto', $p->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="sup" type="submit"><i class='bx bxs-x-circle'></i></button>
+                        <input type="hidden" name="idAlbum" value="{{$album->id}}">
+                    </form>
+                @endif
+            @endauth
+
             <i class='bx bx-expand'></i>
         </div>
     </div>
