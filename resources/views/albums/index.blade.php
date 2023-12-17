@@ -14,7 +14,7 @@
 
     <h1 class="titAlb">Tous les albums sont ici :</h1>
 
-    <div class="contGridAlb">
+    <div class="contGridAlb container">
         @foreach ($albums as $a)
             <div class="unAlbum">
                 <a href="{{route("albums.show", $a -> id)}}">
