@@ -37,7 +37,7 @@
     </script>
 
     <h1>Les photos de {{$album -> titre}} :</h1>
-    <i>Créé par ... le {{$album -> creation}}</i>
+    <i>Créé par {{ $album->user->name }} le {{$album -> creation}}</i>
 
     <div class="filtre">
         <form action="{{ route('filter.album', ['id' => $album->id]) }}" method="GET">
