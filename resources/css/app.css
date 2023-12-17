@@ -235,10 +235,30 @@ input:focus {
     padding: 20px;
 }
 
-.phoAlb {
+#phoAlb {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3em;
+}
+
+#imgorigine {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+}
+
+.img p {
+    font-weight: 600;
+}
+
+.titPho {
+    font-size: 1.25em;
+    margin-bottom: 0;
 }
 
 
@@ -278,18 +298,21 @@ input:focus {
 
 .bx-expand {
     position: absolute;
-    font-size: 7em;
+    font-size: 5em;
     top: 50%;
     right: 50%;
     cursor: pointer;
     transform: translate(50%, -50%);
 }
 
-.bxs-x-circle {
+#phoAlb button {
     position: absolute;
     top: 5px;
     right: 5px;
     cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.25em;
 }
 
 .img>.bx {

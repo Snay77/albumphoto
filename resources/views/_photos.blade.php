@@ -1,8 +1,10 @@
-<div id="phoAlb">
+<div id="phoAlb" class="container">
     @forelse ($photos as $p)
-    <div id="phoAlb">
+    <div>
         <div class="img">
             <img src="{{$p -> url}}" alt="l_image" id="imgorigine">
+            <p class="titPho">{{$p->titre}}</p>
+            <p>{{$p->note}}/5</p>
 
             @auth
                 @if (Auth::user()->id == $album->user_id)
