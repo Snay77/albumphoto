@@ -9,11 +9,17 @@
             <div id="int">
                 <form action="{{route("ajoutPhoto")}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
-                    <input type="file" name="photos[]" multiple id="photo">
-                    <input type="text" name="tag[]" placeholder="Tag de la photo">
-                    <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
-                    <input type="hidden" name="idAlbum" value="{{$album->id}}">
+                    <div id="photos-container">
+                        <div class="createalbumphoto">
+                            <input type="text" name="titrephoto[]" placeholder="Titre de la photo...">
+                            <input type="file" name="photos[]" multiple id="photo">
+                            <input type="text" name="tag[]" placeholder="Tag de la photo">
+                            <input type="number" name="note[]" placeholder="Note de la photo (max : 5)">
+                            <input type="hidden" name="idAlbum" value="{{$album->id}}">
+                            <button class="supprimerphoto">Supprimer</button>
+                        </div>
+                    </div>
+                    <button class="ajouterphoto">Ajouter une photo</button>
                     <input type="submit">
                 </form>
                 <button id="close">Fermer</button>
