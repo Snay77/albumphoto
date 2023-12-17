@@ -12,7 +12,7 @@
         </form>
     </div>
 
-    <h1>Tous les albums sont ici :</h1>
+    <h1 class="titAlb">Tous les albums sont ici :</h1>
 
     <div class="contGridAlb">
         @foreach ($albums as $a)
