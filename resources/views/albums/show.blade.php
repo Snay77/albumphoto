@@ -39,6 +39,16 @@
     <h1>Les photos de {{$album -> titre}} :</h1>
     <i>Créé par ... le {{$album -> creation}}</i>
 
+    <div class="filtre">
+        <form action="{{ route('filter.album', ['id' => $album->id]) }}" method="GET">
+            <select name="sort_by">
+                <option value="note">Note</option>
+                <option value="titre">Titre</option>
+            </select>
+            <button type="submit">Trier</button>
+        </form>
+    </div>
+
     <form action="/albums/filter/{{$album->id}}" method="GET">
         <div>
             <label for="tag">Tag:</label>

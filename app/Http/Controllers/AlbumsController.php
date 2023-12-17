@@ -94,7 +94,7 @@ class AlbumsController extends Controller
         // $photo->delete();
     }
 
-    public function filteralbum(Request $request)
+    public function filteralbums(Request $request)
     {
         $sortBy = $request->input('sort_by'); // Récupération du critère de tri depuis le formulaire
 
@@ -107,6 +107,23 @@ class AlbumsController extends Controller
         return view('albums.index', compact('albums'));
     }
 
+    public function filteralbum(Request $request, $id)
+    {
+        $album = Album::findOrFail($id);
+        $query = Photo::where('album_id', $id);
+
+        $sortBy = $request->input('sort_by');
+
+        if ($sortBy === 'note') {
+            $query->orderBy('note', 'desc');
+        } elseif ($sortBy === 'titre') {
+            $query->orderBy('titre');
+        }
+
+        $photofiltre = $query->get();
+
+        return view('albums.show', compact('photofiltre', 'album'));
+    }
 
     public function filterphoto(Request $request, $id)
     {

@@ -18,7 +18,8 @@ use Whoops\Run;
 */
 
 Route::get('/', [AccueilController::class, 'afficherRand'])->name(('accueil'));
-Route::get('/albums/index', [AlbumsController::class, 'filteralbum'])->name('filter.albums');
+Route::get('/albums/index', [AlbumsController::class, 'filteralbums'])->name('filter.albums');
+Route::get('/albums/{id}/filter', [AlbumsController::class, 'filteralbum'])->name('filter.album');
 
 Route::get('/albums/filter/{id}', [AlbumsController::class, 'filterphoto'])->name('filter.photos');
 
