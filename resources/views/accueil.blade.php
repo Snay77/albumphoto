@@ -2,10 +2,6 @@
 
 @section('content')
 
-    {{-- @auth
-        <h1>Bonjour {{Auth::user()->name}}</h1>
-    @endauth --}}
-
     <section id="bandeau1">
         <div>
             <h1>Des albums photos pour les plus beaux toutous !</h1>
@@ -21,7 +17,6 @@
     <section id="bandeau3">
         <h2>Découvrez des albums</h2>
         <div id="selection">
-
             @for($i = 0; $i < count($albums); $i++)
                 <div class="select">
                     <img src="{{$photos[$i]->url}}" alt="Image">
@@ -29,6 +24,7 @@
                     <p>Créé le : {{$albums[$i]->creation}}</p>
                 </div>
             @endfor
+        </div>
         
     </section>
 

@@ -107,13 +107,14 @@ header a {
 }
 
 #selection {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1em 0em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
 }
 
 .select img {
-    max-height: 25em;
+    aspect-ratio: 16/9;
+    max-width: 100%;
 }
 
 .select a {
