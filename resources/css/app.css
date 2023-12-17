@@ -228,6 +228,12 @@ input:focus {
     padding: 20px;
 }
 
+.phoAlb {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3em;
+}
+
 
 /* -- UN ALBUM AJOUT PHOTO --*/
 
@@ -239,6 +245,7 @@ input:focus {
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
+    z-index: 11;
 }
 
 #int {
@@ -252,6 +259,38 @@ input:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+
+/* -- UN ALBUM SUPPRESSION PHOTO -- */
+
+.img {
+    position: relative;
+    width: fit-content;
+}
+
+.bx-expand {
+    position: absolute;
+    font-size: 7em;
+    top: 50%;
+    right: 50%;
+    cursor: pointer;
+    transform: translate(50%, -50%);
+}
+
+.bxs-x-circle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.img>.bx {
+    display: none;
+}
+
+.img:hover>.bx {
+    display: block;
 }
 
 
