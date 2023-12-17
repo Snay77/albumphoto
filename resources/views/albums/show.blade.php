@@ -35,7 +35,7 @@
                     <button class="ajouterphoto">Ajouter une photo</button>
                     <input type="submit">
                 </form>
-                <button id="close">Fermer</button>
+                <button id="close"><i class='bx bx-x'></i></button>
             </div>
         </div>
     @endauth
