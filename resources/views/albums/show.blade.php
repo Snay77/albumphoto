@@ -13,7 +13,14 @@
     </div>
 
     <h1 class="titAlb">Les photos de {{$album -> titre}} :</h1>
-    <i class="decale">Créé par {{$album->user->name}}  le {{$album -> creation}}</i> <br/>
+
+    @if ($album->user_id != null)
+        <i class="decale">Créé par {{$album->user->name}} le {{$album -> creation}}</i> <br/>
+    @else
+        <i class="decale">Créé par inconnu le {{$album -> creation}}</i> <br/>
+    @endif
+
+   
 
     {{-- Fonction pour ajouter une photo --}}
     @auth
